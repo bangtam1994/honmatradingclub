@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-
+import Logo from "../assets/logo_round.png";
 export default function Header() {
   return (
     <header>
       <Link to="/" className="flex items-center ">
         <img
-          src="src/assets/logo_round.png"
+          src={Logo}
           alt="logo honma trading club"
           className="w-10 h-10 md:w-14 md:h-14 mr-4"
         />
