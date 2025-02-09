@@ -1,0 +1,102 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import Typewriter from "typewriter-effect";
+import houseMountainsImage from "../assets/sky_cloud.jpg";
+import { EMAIL } from "@/utils/personalInfo";
+import {
+  faYoutube,
+  faTelegram,
+  faInstagram,
+  faDiscord,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export default function Footer() {
+  return (
+    <div className="relative text-black bg-white h-[60rem] w-full mt-36">
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-transparent h-[30%] w-full"></div>
+      <div className="absolute top-0 left-0 right-0 h-20 bg-white"></div>
+
+      <LazyLoadImage
+        src={houseMountainsImage}
+        className="w-full h-full object-cover"
+      />
+
+      <div className="absolute top-[15%] left-1/2 transform -translate-x-1/2 text-center px-6">
+        <h1 className="text-2xl font-semibold mb-4">
+          <Typewriter
+            options={{
+              strings: ["Ton aventure commence ici"],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 10,
+            }}
+          />
+        </h1>
+        <p className="text-lg mb-6 w-[60%] m-auto">
+          Ma mission est de vous accompagner dans votre évolution à la fois en
+          tant que trader expérimenté et armé, mais aussi dans votre mindset et
+          approche autour de la liberté financière. Vivez cette aventure avec
+          moi, et avec Honma !
+        </p>
+        <hr className="border-black w-9/12 m-auto" />
+
+        <div className="flex justify-evenly items-center text-lg mt-3">
+          <a href={`mailto:${EMAIL}`} className="text-right">
+            {EMAIL}
+          </a>
+        </div>
+      </div>
+
+      <footer className="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-center  mt-auto">
+        <div className="container mx-auto text-sm text-black">
+          <p className="text-sm text-black">
+            © {new Date().getFullYear()} Honma Trading Club. All rights
+            reserved.
+          </p>
+          <div className="mt-3 flex justify-center space-x-4">
+            <button
+              className="text-primary"
+              onClick={() =>
+                window.open("https://www.youtube.com/@HonmaTradingClub")
+              }
+            >
+              <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
+            </button>
+            <button
+              className="text-primary"
+              onClick={() => window.open("https://www.discord.gg/FJHkvwsW")}
+            >
+              <FontAwesomeIcon icon={faDiscord} className="w-6 h-6" />
+            </button>
+            <button
+              className="text-primary"
+              onClick={() => window.open("https://telegram.me/alxqng")}
+            >
+              <FontAwesomeIcon icon={faTelegram} className="w-6 h-6" />
+            </button>
+            <button
+              className="text-primary"
+              onClick={() =>
+                window.open("https://www.instagram.com/honmatradingClub")
+              }
+            >
+              <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+            </button>
+          </div>
+          <div className="mt-6">
+            <a href="/terms-of-service" className="text-sm  hover:text-primary">
+              Conditions Générales
+            </a>
+          </div>
+          <div className="mt-1">
+            <a href="/privacy-policy" className="text-sm  hover:text-primary">
+              Politique de confidentialité
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
