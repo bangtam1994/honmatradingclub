@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import HeaderSecondary from "@/components/HeaderSecondary";
+import VisionSection from "@/components/VisionSection";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -23,7 +24,7 @@ const AboutHonma: React.FC = () => {
           </section>
 
           {/* Section: Vision */}
-          <section className="mb-16">
+          {/* <section className="mb-16">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-semibold text-primary">
                 Notre Vision
@@ -68,7 +69,8 @@ const AboutHonma: React.FC = () => {
                 </p>
               </div>
             </div>
-          </section>
+          </section> */}
+          <VisionSection />
 
           {/* Section: YT */}
           <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">

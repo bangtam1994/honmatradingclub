@@ -45,7 +45,7 @@ body {
 #hero {
   font-size: 1rem;
   color: #fff;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   background: url("../assets/sky_2.jpg");
   background-size: cover;
@@ -68,11 +68,10 @@ body {
 #hero .centeredText {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   padding: 0 20px;
+  padding-top: 20%;
 }
 #hero .centeredText p {
   /* font-size: 1rem;
@@ -87,7 +86,7 @@ body {
   color: #d3d3d3 !important;
   z-index: 10;
 }
-#hero header {
+/* #hero header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -116,7 +115,7 @@ body {
 }
 #hero header ul a:hover {
   color: #d3d3d3;
-}
+} */
 /* #hero p {
   margin-top: 0.2rem;
   font-weight: 400;
