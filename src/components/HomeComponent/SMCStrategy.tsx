@@ -4,12 +4,13 @@ import { Button } from "../ui/button";
 import phoneBackground from "../../assets/hero_section_background.jpeg";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MotionWrapper from "@/components/MotionWrapper";
+import { motion } from "framer-motion";
 
 export default function SMCStrategy() {
   return (
-    <div className="relative bg-[#0B0E15] text-white mt-10">
+    <div className="relative bg-[#0B0E15] text-white mt-40">
       <div
-        className="min-h-[450px] bg-center bg-no-repeat bg-cover relative"
+        className="min-h-[30vh] bg-center bg-no-repeat bg-cover relative"
         style={{
           backgroundImage: `url(${phoneBackground})`,
         }}
@@ -22,7 +23,7 @@ export default function SMCStrategy() {
         id="content"
         className="flex flex-col justify-center items-center bg-black w-[full]"
       >
-        <div className="flex flex-col md:flex-row  justify-between items-center w-full px-8 lg:px-64 h gap-10 my-10">
+        <div className="flex flex-col md:flex-row  justify-between items-center w-full px-8 container h gap-10 my-28">
           <div className="w-full lg:w-1/2 flex flex-col items-center">
             <div className="relative mb-4 flex justify-center items-center">
               <LazyLoadImage
@@ -52,13 +53,18 @@ export default function SMCStrategy() {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center ">
             <MotionWrapper>
-              <div className="flex items-center mb-4 text-center md:text-left">
+              <div className="flex justifu-center items-center mb-7 text-center md:text-left ">
                 <h2
                   id="scroll_location"
                   className="text-2xl border-l-4 border-primary pl-6"
                 >
-                  Découvre ma stratégie avec le Trading SMC
+                  Découvre ma stratégie avec le
                 </h2>
+
+                <motion.h2 className="text-center text-5xl leading-normal font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent ml-2">
+                  {" "}
+                  trading SMC
+                </motion.h2>
               </div>
 
               <p className="mb-10 text-md text-center md:text-left">

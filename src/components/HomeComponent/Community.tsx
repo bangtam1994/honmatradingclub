@@ -1,23 +1,22 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import discord from "../../assets/discord.png";
-import discordPhone from "../../assets/phone.png";
+import discordPhone from "../../assets/phone_mockup.png";
 import MotionWrapper from "@/components/MotionWrapper";
+import { DISCORD_RECORD } from "@/utils/personalInfo";
+import { motion } from "framer-motion";
 
 export default function Community() {
   return (
     <MotionWrapper>
       <div
         id="info-section"
-        className="m-10 text-white  px-6 lg:px-20 md:p-10"
-        style={{}}
+        className="m-20 text-white  px-6 lg:px-20 md:p-10 mb-"
       >
         <div className="mx-auto flex flex-col  gap-8  items-center justify-between space-y-8 md:space-y-0 mb-16">
-          <h1 className="text-[20px] font-bold mt-2 text-center">
+          <h1 className="text-[20px] md:text-[35px] font-bold mt-2 flex text-center items-end">
             Tradez en
-            <span className="text-[40px] text-primary font-bold  ml-4">
+            <motion.span className="text-center  font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent ml-4">
               communauté
-            </span>
+            </motion.span>
           </h1>
           <h3>
             HTC, c'est un vrai club. Pas de vendeur de rêves, pas de
@@ -25,27 +24,35 @@ export default function Community() {
             mes réseaux.
           </h3>
         </div>
-        <div className="flex md:flex-row flex-col gap-6 justify-center items-center">
-          <LazyLoadImage
-            effect="blur"
-            src={discord}
-            alt={"discord honma"}
-            className="md:h-[450px] object-cover rounded-sm"
-          />
-          <LazyLoadImage
-            effect="blur"
-            src={discordPhone}
-            alt={"discord phone honma"}
-            className="md:h-[500px] object-cover rounded-sm"
-          />
+        <div className="flex md:flex-row flex-col gap-20 justify-center items-center">
+          <div className="relative">
+            {/* iPhone Mockup Image */}
+            <img
+              src={discordPhone}
+              alt="iPhone Mockup"
+              className="w-full z-20 h-[600px]"
+            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-3 left-4 w-[91%] h-[96%] object-cover  z-10 rounded-[35px]"
+            >
+              <source src={DISCORD_RECORD} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* YOUTUBe  */}
         </div>
-        <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">
+        {/* <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">
           <iframe
             src="https://www.youtube.com/embed/QEIDA02VJkU?si=cRjxCdvdYzgSlmlX"
             className="w-full  h-[300px] md:h-[400px] border-none flex-1"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
       </div>
     </MotionWrapper>
   );

@@ -65,14 +65,14 @@ body {
     rgb(12, 14, 22) 100%
   );
 }
-#hero .centeredText {
+/* #hero .centeredText {
   display: flex;
   flex-direction: column;
   height: 90vh;
   text-align: center;
   padding: 0 20px;
-  padding-top: 20%;
-}
+   padding-top: 20%; 
+} */
 #hero .centeredText p {
   /* font-size: 1rem;
   margin: 0.5rem 0;

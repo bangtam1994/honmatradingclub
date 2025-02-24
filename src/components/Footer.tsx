@@ -2,7 +2,13 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Typewriter from "typewriter-effect";
 import houseMountainsImage from "../assets/sky_cloud.jpg";
-import { EMAIL } from "@/utils/personalInfo";
+import {
+  DISCORD_URL,
+  EMAIL,
+  INSTAGRAM_URL,
+  TELEGRAM_URL,
+  YOUTUBE_URL,
+} from "@/utils/personalInfo";
 import {
   faYoutube,
   faTelegram,
@@ -26,7 +32,7 @@ export default function Footer() {
         <h1 className="text-2xl font-semibold mb-4">
           <Typewriter
             options={{
-              strings: ["Ton aventure commence ici"],
+              strings: ["Ta liberté financière commence ici"],
               autoStart: true,
               loop: true,
               delay: 50,
@@ -58,29 +64,25 @@ export default function Footer() {
           <div className="mt-3 flex justify-center space-x-4">
             <button
               className="text-primary"
-              onClick={() =>
-                window.open("https://www.youtube.com/@HonmaTradingClub")
-              }
+              onClick={() => window.open(YOUTUBE_URL)}
             >
               <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
             </button>
             <button
               className="text-primary"
-              onClick={() => window.open("https://www.discord.gg/FJHkvwsW")}
+              onClick={() => window.open(DISCORD_URL)}
             >
               <FontAwesomeIcon icon={faDiscord} className="w-6 h-6" />
             </button>
             <button
               className="text-primary"
-              onClick={() => window.open("https://telegram.me/alxqng")}
+              onClick={() => window.open(TELEGRAM_URL)}
             >
               <FontAwesomeIcon icon={faTelegram} className="w-6 h-6" />
             </button>
             <button
               className="text-primary"
-              onClick={() =>
-                window.open("https://www.instagram.com/honmatradingClub")
-              }
+              onClick={() => window.open(INSTAGRAM_URL)}
             >
               <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
             </button>

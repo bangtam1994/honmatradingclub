@@ -8,6 +8,9 @@ import HeroSection from "../components/HomeComponent/HeroSection";
 import PricingPlans from "../components/HomeComponent/PricingPlan";
 import SMCStrategy from "../components/HomeComponent/SMCStrategy";
 import YTWidget from "../components/HomeComponent/YTWidget";
+import ScrollingBanner from "@/components/ScrollingBanner";
+import FAQPage from "@/components/FAQ";
+import { faqData } from "@/utils/faq";
 
 function Home() {
   return (
@@ -17,9 +20,11 @@ function Home() {
         <HeroSection />
         <YTWidget />
         <Community />
+        <ScrollingBanner />
         <PricingPlans />
         <SMCStrategy />
         <InspirationalMe />
+        <FAQPage data={faqData} isHomepage />
         <Footer />
       </LazyLoadComponent>
 

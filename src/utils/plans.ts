@@ -1,3 +1,5 @@
+import { EMAIL } from "./personalInfo";
+
 export interface Plan {
   type: PlanType;
   name: string;
@@ -10,45 +12,50 @@ export interface Plan {
   features: string[];
   threeMonthPrice?: number;
   baseThreeMonthPrice?: number;
-  details?: { caption: string; picture: string; features: string[] };
-  faq?: { question: string; response: string }[];
+  details?: {
+    title: string;
+    caption: string;
+    picture: string;
+    features: string[];
+  };
+  faq: { question: string; response: string }[];
 }
 
 export enum PlanType {
-  FREE_COMMUNITY = "free_community",
+  FORMATION_HTC = "FORMATION_HTC",
   LE_CLUB_PRIVE = "private_club",
   MENTORAT = "mentorship",
 }
 
 export const plans: Plan[] = [
   {
-    type: PlanType.FREE_COMMUNITY,
-    name: "SMC Family™",
+    type: PlanType.FORMATION_HTC,
+    name: "Formation HTC ™",
     active: true,
     priceId: import.meta.env.VITE_STRIPE_PRICE_SMART_SIGNALS,
-    monthlyPrice: 0,
+    monthlyPrice: 49.9,
     annualPrice: 0,
     baseAnnualPrice: 0,
-    description: "Un groupe d'entraide et de passionnés.",
+    description: "Découvre mon plan de formation basée sur la Smart Money.",
 
     features: [
-      "Alertes quotidiennes sur les meilleures opportunités de trading ",
-      "2 à 5 signaux de qualité par semaine (70% win rate)",
-      "Notifications instantanées via télégram",
-      "Focus sur la validation des prop firms : passez les challenges avec aisance",
-      "Accès au groupe privé QNG Capital Gold",
+      "Accès aux modules vidéos (tous niveaux)",
+      "Accès E-books et supports",
+      "Études de cas pratiques sur des trades réussis et ratés",
+      "Checklist quotidienne de prépa trading",
+      "Analyse technique et fondamentale",
     ],
     details: {
+      title: "Formation Honma Trading Club",
       caption:
-        "Vous aurez accès aux : Signaux, Canal Télégram privé, E-learning vidéos VIP",
+        "La formation complète contenant tous les outils pour trader sereinement sur les marchés.",
       picture: "assets/picture_signals.png",
       features: [
-        " Alertes quotidiennes sur les meilleures opportunités de trading en temps réel",
-        " 2 à 5 signaux de qualité par semaine (70% win rate)",
-        " Signaux simples à suivre avec des points d'entrée, de sortie et des stop-loss définis",
-        " Notifications instantanées via télégram",
-        " Focus sur la validation des prop firms : passez les challenges avec aisance",
-        " Accès au groupe privé QNG Capital Gold",
+        "Accès aux modules vidéos (tous niveaux)",
+        "Accès E-books et supports",
+        "Études de cas pratiques sur des trades réussis et ratés",
+        "Checklist quotidienne de prépa trading",
+        "Analyse technique et fondamentale",
       ],
     },
     faq: [
@@ -65,15 +72,14 @@ export const plans: Plan[] = [
 
       {
         question:
-          "En combien de temps puis-je valider les prop firms avec QNG Smart Signals ?",
+          "En combien de temps puis-je valider les prop firms avec Honma Trading Club?",
         response:
-          " Tout dépend de ton risque, je conseills de risquer 0,5% / signaux, et ainsi survivre le plus longtemps possible pour ne pas cramer ton capital.Mais généralement entre 2 semaines à 1 mois !",
+          " Tout dépend de ton risque, je conseille de risquer 0,5% / signaux, et ainsi survivre le plus longtemps possible pour ne pas cramer ton capital.Mais généralement entre 2 semaines à 1 mois !",
       },
 
       {
         question: "Que faire si je veux annuler mon abonnement ?",
-        response:
-          "C'est très simple, envoies moi un message à contact@qngcapital.com, mon équipe et moi annulerons l'abonnement. Tu auras cependant l'accès jusqu'à la date du mois suivant où tu as effectué ton paiement.",
+        response: `C'est très simple, envoies moi un message à ${EMAIL}, mon équipe et moi annulerons l'abonnement. Tu auras cependant l'accès jusqu'à la date du mois suivant où tu as effectué ton paiement.`,
       },
 
       {
@@ -94,42 +100,39 @@ export const plans: Plan[] = [
     name: "Le Club Privé ™",
     active: true,
     priceId: "price_1Q8mnAJ4HMnfuly583NQ8VIo",
-    monthlyPrice: 49.9,
+    monthlyPrice: 89.9,
     //  annualPrice: 490,
     //  baseAnnualPrice: 599,
 
     description:
-      "Découvre la meilleure stratégie, domine les marchés grâce à la VRAIE smart money.",
+      "Rejoins le Club exclusif, une communauté de traders aguerris !",
     features: [
-      "Accès aux modules vidéos (tous niveaux)",
-      "Accès E-books et supports",
-      "Études de cas pratiques sur des trades réussis et ratés",
+      "Accès à la formation HTC (vidéos et ebook)",
+      "Analyse technique et fondamentale",
+      "Accès au groupe privé Discord d'apprentissage",
+      "Accès à 4 lives exclusif par mois",
       "Outils exclusifs de backtesting",
       "Checklist quotidienne de prépa trading",
-      "nalyse technique et fondamentale",
-      "Accès au groupe Discord d'apprentissage et échange avec d'autres membres",
-      "2 LIVE/mois",
     ],
     details: {
+      title: "Le Club Privé",
       caption:
-        "Vous aurez accès aux : Signaux, Canal Télégram privé, E-learning vidéos VIP",
+        "L'offre VIP, avec un accès à la formation Honma Trading Club et un accès VIP au Club, un canal Discord où se retrouvent tous les traders prêts à optimiser leur stratégie et améliorer leur psychologie face aux marchés.",
       picture: "assets/phone_qng.png",
       features: [
-        "Stratégies testées et validées par des traders financés",
-        "E-books et supports pédagogiques téléchargeables",
-        "ccès à tout les modules vidéos (débutant/intermédiaire/avancé)",
+        "Accès à tout les modules vidéos (débutant/intermédiaire/avancé)",
         "Études de cas pratiques sur des trades réussis et ratés",
         "Outils exclusifs de backtesting pour affiner vos stratégies",
         "Checklist quotidienne de préparation pour optimiser chaque session de trading en PDF",
         "Analyse technique et fondamentale : maîtrisez les deux aspects du marché",
         "Accès à un groupe Discord d'apprentissage pour échanger avec d'autres membres",
-        "2 LIVE/mois pour répondre à vos questions",
+        "2 LIVE/mois pour répondre à vos questions, vous proposer mes analyses du moment",
       ],
     },
     faq: [
       {
         question:
-          "Est ce que la Formation QNG Academy est faite pour tout le monde ?",
+          "Est ce que la Formation Honma Trading est faite pour tout le monde ?",
         response:
           "Que tu sois expert, novice ou trader à temps partiel avec un travail/étude à côté, le contenu est applicable sur toutes les timeframes et tous les marchés donc adaptable à tout type de profils. Ma méthode permet de valider des challenges peut importe ta situation, si tu t'y met sérieusement !",
       },
@@ -150,8 +153,7 @@ export const plans: Plan[] = [
       },
       {
         question: "Mon paiement ne passe pas, que faire ?",
-        response:
-          "Si tu reçois un message d'erreur lors du paiement désactive bien ton VPN et change de navigateur, ça a toujours fonctionné. Si tu as besoin d'aide supplémentaire, n'hésite pas à me contacter à l'adresse suivante : contact@qngcapital.com",
+        response: `Si tu reçois un message d'erreur lors du paiement désactive bien ton VPN et change de navigateur, ça a toujours fonctionné. Si tu as besoin d'aide supplémentaire, n'hésite pas à me contacter à l'adresse suivante : ${EMAIL}`,
       },
     ],
   },
@@ -166,24 +168,23 @@ export const plans: Plan[] = [
     description:
       "Accélère ton parcours de trader avec un mentorat personnalisé.",
     features: [
+      "Accès à la formation HTC (vidéos et ebook)",
+      "Accès au Club privé, canal privé sur Discord",
       "Coaching individuel 1-on-1 , 4x/mois",
-      "Plan d’action personnalisé",
-      "Formation 'QNG Trading Academy' OFFERT en Support",
-      "Accès VIP à moi même",
-      "Accès à des stratégies avancées (1 million d'€ en gestion prop firm)",
       "Revue mensuelle de votre portefeuille",
       "Développement d’un mindset de trader pro",
-      "Accès à des outils premium pour une analyse plus fine des marchés ",
       "Suivi des performances",
+      "Accès à des outils premium pour une analyse plus fine des marchés ",
     ],
     details: {
+      title: "Offre de mentorat",
       caption:
-        "Vous aurez accès aux : Signaux, Canal Télégram privé, E-learning vidéos VIP, Coaching 3x/semaine",
+        "Notre programme de mentorat est notre offre la plus premium.  Vous serez accompagné personnellement pour atteindre vos objectifs en trading, en suivant une méthodologie éprouvée.",
       picture: "assets/phone_qng.png",
       features: [
         "Coaching individuel 1-on-1 , 4x par mois (Session d'1 heure)",
         "Plan d’action personnalisé pour développer vos compétences et améliorer vos performances",
-        "Formation 'QNG Trading Academy' OFFERT en Support",
+        "L'offre 'Formation HTC' OFFERT en Support",
         "Accès VIP à moi même",
         "Optimisation des stratégies de trading en fonction de vos objectifs personnels",
         " Accès à des stratégies avancées exclusives utilisées pour gérer 1 million d'€ en gestion prop firm.",
