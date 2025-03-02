@@ -23,7 +23,7 @@ const PricingPlans: React.FC = () => {
       <div
         ref={ref}
         id="pricing-section"
-        className="relative w-full overflow-hidden py-16"
+        className="relative w-full overflow-hidden py-16 "
       >
         {/* Background Video */}
         <video
@@ -32,7 +32,7 @@ const PricingPlans: React.FC = () => {
           loop
           muted
           playsInline
-          className="absolute top-[15%] left-0 w-full object-cover z-[-1] bg-black"
+          className="absolute top-[12%] md:top-[15%] left-0 w-full  h-[40%] md:h-[90%] object-cover z-[-1]"
         />
 
         {/* Section Title */}
@@ -42,13 +42,13 @@ const PricingPlans: React.FC = () => {
           </div>
         </div>
         <div className="text-center text-white">
-          <h2 className="text-4xl font-bold">Les offres Honma</h2>
-          <p className="mt-10 w-[70%] m-auto text-xl text-primary-light uppercase ">
+          <h2 className="text-h2 font-bold">Les offres Honma</h2>
+          <p className="mt-10 w-[70%] m-auto  text-[20px] md:text-[30px]  text-primary-light uppercase ">
             Combien vas-tu investir dans ton succès en tant que trader
             aujourd'hui ?
           </p>
         </div>
-        <div className="flex justify-center p-6">
+        <div className="flex justify-center p-6 ">
           {/* Pricing Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-20 justify-center">
             {plans.map((plan) => {
@@ -65,7 +65,7 @@ const PricingPlans: React.FC = () => {
                   key={plan.name}
                   onClick={handleClick}
                   className={cn(
-                    `w-full max-w-[400px] mx-auto px-6 py-10 rounded-2xl  transition-transform hover:-translate-y-2 border-none shadow-inner  duration-300 ease-out hover:scale-102 cursor-pointer`,
+                    `w-full max-w-[400px] mx-auto px-4 md:px-6 md:py-10 py-6 rounded-2xl  transition-transform hover:-translate-y-2 border-none shadow-inner  duration-300 ease-out hover:scale-102 cursor-pointer`,
                     isClubPrivate
                       ? "bg-primary text-white"
                       : "bg-gray-200 text-black"
@@ -74,43 +74,25 @@ const PricingPlans: React.FC = () => {
                   <CardContent className="flex flex-col justify-between h-full">
                     <div>
                       {/* Plan Name */}
-                      <div className="h-[250px] flex flex-col  justify-between">
-                        <h3 className="text-2xl font-bold text-center">
+                      <div className="h-[200px] flex flex-col  justify-between">
+                        <h3 className="mt-2 text-[26px] md:text-3xl font-bold text-center">
                           {plan.name}
                         </h3>
-                        {/* Price */}
-                        {plan.monthlyPrice > 0 && (
-                          <motion.div
-                            initial={{ opacity: 0.3, scale: 0.9 }}
-                            animate={{ opacity: 0.9, scale: 1 }}
-                            transition={{ duration: 0.4 }}
-                            className="text-center mt-8"
-                          >
-                            <div className="flex items-baseline justify-center">
-                              <span className="text-4xl font-bold">
-                                {Number(plan.monthlyPrice).toFixed(
-                                  plan.type !== PlanType.MENTORAT ? 2 : 0
-                                )}
-                                €
-                              </span>
-                            </div>
-                          </motion.div>
-                        )}
 
                         {/* Description */}
-                        <p className="mt-8 text-center text-s[14px]">
+                        <p className="mt-2 text-center text-[18px]">
                           {plan.description}
                         </p>
                         {/* Divider */}
                         <div
                           className={cn(
-                            "w-full border-t mt-8",
+                            "w-full border-t ",
                             isClubPrivate ? "border-white" : "border-gray-500"
                           )}
                         ></div>
                       </div>
                       {/* Features List */}
-                      <div className="mt-8 space-y-2">
+                      <div className="mt-8  space-y-1 md:space-y-3">
                         {plan.features.map((feature, index) => (
                           <div
                             key={index}
@@ -129,23 +111,44 @@ const PricingPlans: React.FC = () => {
                         ))}
                       </div>
                     </div>
-
-                    {/* CTA Button */}
-                    <Button
-                      className={cn(
-                        "w-full mt-10 font-bold h-12",
-                        isClubPrivate
-                          ? "bg-white text-black"
-                          : "bg-primary text-white"
+                    {/* Price */}
+                    <div className="mt-8 md:mt-10">
+                      {" "}
+                      {plan.monthlyPrice > 0 && (
+                        <motion.div
+                          initial={{ opacity: 0.3, scale: 0.9 }}
+                          animate={{ opacity: 0.9, scale: 1 }}
+                          transition={{ duration: 0.4 }}
+                          className=""
+                        >
+                          <div className="flex items-baseline justify-center">
+                            <span className="text-4xl font-bold">
+                              {Number(plan.monthlyPrice).toFixed(
+                                plan.type !== PlanType.MENTORAT ? 2 : 0
+                              )}
+                              €
+                            </span>
+                            <span> /mois</span>
+                          </div>
+                        </motion.div>
                       )}
-                      variant={"reserve"}
-                      disabled={!plan.active}
-                      onClick={handleClick}
-                    >
-                      {plan.type === PlanType.MENTORAT
-                        ? "ME CONTACTER"
-                        : "REJOINDRE"}
-                    </Button>
+                      {/* CTA Button */}
+                      <Button
+                        className={cn(
+                          "w-full mt-10 font-bold h-12",
+                          isClubPrivate
+                            ? "bg-white text-black"
+                            : "bg-primary text-white"
+                        )}
+                        variant={"reserve"}
+                        disabled={!plan.active}
+                        onClick={handleClick}
+                      >
+                        {plan.type === PlanType.MENTORAT
+                          ? "ME CONTACTER"
+                          : "REJOINDRE"}
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               );

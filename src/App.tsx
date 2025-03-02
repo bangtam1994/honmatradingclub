@@ -5,7 +5,8 @@ import AboutHonma from "./pages/AboutHonma";
 import ScrollToTop from "./components/HomeComponent/ScrollToTop";
 import PlanPage from "./pages/PlanPage";
 import { PlanType } from "./utils/plans";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import StripeStatusPage from "./components/Course/StripeStatusPage";
 
 const App = () => {

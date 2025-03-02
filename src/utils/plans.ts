@@ -49,7 +49,7 @@ export const plans: Plan[] = [
       title: "Formation Honma Trading Club",
       caption:
         "La formation complète contenant tous les outils pour trader sereinement sur les marchés.",
-      picture: "assets/picture_signals.png",
+      picture: "assets/formation_htc.png",
       features: [
         "Accès aux modules vidéos (tous niveaux)",
         "Accès E-books et supports",
@@ -104,10 +104,9 @@ export const plans: Plan[] = [
     //  annualPrice: 490,
     //  baseAnnualPrice: 599,
 
-    description:
-      "Rejoins le Club exclusif, une communauté de traders aguerris !",
+    description: "Rejoins le Club, une communauté de traders aguerris.",
     features: [
-      "Accès à la formation HTC (vidéos et ebook)",
+      "Accès à la formation HTC (complète)",
       "Analyse technique et fondamentale",
       "Accès au groupe privé Discord d'apprentissage",
       "Accès à 4 lives exclusif par mois",
@@ -118,7 +117,7 @@ export const plans: Plan[] = [
       title: "Le Club Privé",
       caption:
         "L'offre VIP, avec un accès à la formation Honma Trading Club et un accès VIP au Club, un canal Discord où se retrouvent tous les traders prêts à optimiser leur stratégie et améliorer leur psychologie face aux marchés.",
-      picture: "assets/phone_qng.png",
+      picture: "assets/discord.png",
       features: [
         "Accès à tout les modules vidéos (débutant/intermédiaire/avancé)",
         "Études de cas pratiques sur des trades réussis et ratés",
@@ -168,7 +167,7 @@ export const plans: Plan[] = [
     description:
       "Accélère ton parcours de trader avec un mentorat personnalisé.",
     features: [
-      "Accès à la formation HTC (vidéos et ebook)",
+      "Accès à la formation HTC (complète)",
       "Accès au Club privé, canal privé sur Discord",
       "Coaching individuel 1-on-1 , 4x/mois",
       "Revue mensuelle de votre portefeuille",
@@ -180,7 +179,7 @@ export const plans: Plan[] = [
       title: "Offre de mentorat",
       caption:
         "Notre programme de mentorat est notre offre la plus premium.  Vous serez accompagné personnellement pour atteindre vos objectifs en trading, en suivant une méthodologie éprouvée.",
-      picture: "assets/phone_qng.png",
+      picture: "assets/mentorship.png",
       features: [
         "Coaching individuel 1-on-1 , 4x par mois (Session d'1 heure)",
         "Plan d’action personnalisé pour développer vos compétences et améliorer vos performances",

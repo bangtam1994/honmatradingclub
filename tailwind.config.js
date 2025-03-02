@@ -15,6 +15,7 @@ export default {
           hover: "#5B21B6",
           dark: "#5B2596",
           light: "#9f93f4",
+          darkmode: "#0d1017",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

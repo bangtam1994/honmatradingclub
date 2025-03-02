@@ -52,7 +52,7 @@ const ScrollingBanner: React.FC = () => {
               <img
                 src={item.image}
                 alt={item.text}
-                className="p-2 h-[68px] object-contain max-w-none"
+                className="p-1 h-[70px] object-contain max-w-none"
               />
             </a>
           </div>

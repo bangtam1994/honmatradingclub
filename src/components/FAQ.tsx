@@ -23,11 +23,11 @@ const FAQPage = ({ data, isHomepage = false }: FAQProps) => {
         isHomepage ? "mt-40" : "mt-20"
       )}
     >
-      <motion.h2 className="text-center text-5xl font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
+      <motion.h1 className="text-center text-6xl font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
         FAQ
-      </motion.h2>
+      </motion.h1>
 
-      <div className="w-full md:max-w-screen-md xl:max-w-screen-lg mt-10 ">
+      <div className="w-full md:max-w-screen-md xl:max-w-screen-xl mt-10 ">
         <Accordion type="single" collapsible>
           {data.map((faq, index) => (
             <AccordionItem

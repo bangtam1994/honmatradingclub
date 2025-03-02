@@ -18,10 +18,9 @@ export default function Community() {
               communauté
             </motion.span>
           </h1>
-          <h3>
-            HTC, c'est un vrai club. Pas de vendeur de rêves, pas de
-            connaissances inutiles, que du savoir que je te partage en live sur
-            mes réseaux.
+          <h3 className="text-center text-h6 md:text-h4 text-gray-300">
+            HTC, c'est un vrai club. Pas de vendeur de rêves, que du savoir que
+            je te partage en live sur mes réseaux.
           </h3>
         </div>
         <div className="flex md:flex-row flex-col gap-20 justify-center items-center">

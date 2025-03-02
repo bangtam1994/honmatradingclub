@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 export default function SMCStrategy() {
   return (
-    <div className="relative bg-[#0B0E15] text-white mt-40">
+    <div className="relative bg-[#0d1017] text-white py-48">
       <div
-        className="min-h-[30vh] bg-center bg-no-repeat bg-cover relative"
+        className="min-h-[30vh] bg-center bg-no-repeat bg-cover relative py-48"
         style={{
           backgroundImage: `url(${phoneBackground})`,
         }}
@@ -23,7 +23,7 @@ export default function SMCStrategy() {
         id="content"
         className="flex flex-col justify-center items-center bg-black w-[full]"
       >
-        <div className="flex flex-col md:flex-row  justify-between items-center w-full px-8 container h gap-10 my-28">
+        <div className="flex flex-col md:flex-row  justify-between items-center w-full px-8 container h gap-10 md:my-48 my-20">
           <div className="w-full lg:w-1/2 flex flex-col items-center">
             <div className="relative mb-4 flex justify-center items-center">
               <LazyLoadImage
@@ -53,21 +53,18 @@ export default function SMCStrategy() {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center ">
             <MotionWrapper>
-              <div className="flex justifu-center items-center mb-7 text-center md:text-left ">
-                <h2
-                  id="scroll_location"
-                  className="text-2xl border-l-4 border-primary pl-6"
-                >
+              <div className="mb-7 text-center md:text-left  border-l-4 border-primary pl-6">
+                <h2 className="text-[30px] md:text-[40px]">
                   Découvre ma stratégie avec le
                 </h2>
 
-                <motion.h2 className="text-center text-5xl leading-normal font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent ml-2">
+                <motion.h2 className="text-[30px] md:text-[48px] leading-normal font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent ml-2">
                   {" "}
                   trading SMC
                 </motion.h2>
               </div>
 
-              <p className="mb-10 text-md text-center md:text-left">
+              <p className="mb-10 text-[15px] md:text-[20px] text-center md:text-left text-gray-400">
                 Le Smart Money Concept (SMC) aide les traders à identifier les
                 zones clés d’achat et de vente sur le marché. Grâce à cette
                 approche, il est possible de suivre les mouvements des grandes
