@@ -1,30 +1,26 @@
-import Footer from "@/components/Footer";
-import HeaderSecondary from "@/components/HeaderSecondary";
 import VisionSection from "@/components/VisionSection";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const AboutHonma: React.FC = () => {
   return (
-    <div>
-      <HeaderSecondary />
-      <div className="py-10 px-6">
-        <div className="max-w-screen-xl mx-auto">
-          {/* Section: Hero */}
-          <section className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-primary mb-4">
-              À propos de Honma
-            </h1>
-            <p className="text-lg text-white max-w-4xl mx-auto">
-              Honma est un club d'investissement axé sur l'éducation et
-              l'accompagnement des investisseurs dans le monde du trading. Notre
-              mission est de rendre le trading accessible à tous et de guider
-              nos membres vers une gestion financière réussie et éclairée.
-            </p>
-          </section>
+    <div className="py-10 px-6">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Section: Hero */}
+        <section className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-primary mb-4">
+            À propos de Honma
+          </h1>
+          <p className="text-lg text-white max-w-4xl mx-auto">
+            Honma est un club d'investissement axé sur l'éducation et
+            l'accompagnement des investisseurs dans le monde du trading. Notre
+            mission est de rendre le trading accessible à tous et de guider nos
+            membres vers une gestion financière réussie et éclairée.
+          </p>
+        </section>
 
-          {/* Section: Vision */}
-          {/* <section className="mb-16">
+        {/* Section: Vision */}
+        {/* <section className="mb-16">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-semibold text-primary">
                 Notre Vision
@@ -70,36 +66,34 @@ const AboutHonma: React.FC = () => {
               </div>
             </div>
           </section> */}
-          <VisionSection />
+        <VisionSection />
 
-          {/* Section: YT */}
-          <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">
-            <iframe
-              src="https://www.youtube.com/embed/Fje4bk6cvfg?si=XSudVYpj4NxsX-Qb"
-              className="w-full  h-[300px] md:h-[400px] border-none flex-1"
-              allowFullScreen
-            ></iframe>
-          </div>
-          {/* Section: Call to Action */}
-          <section className="text-center my-20">
-            <h2 className="text-3xl font-semibold text-primary mb-4">
-              Rejoignez-nous dès aujourd'hui !
-            </h2>
-            <p className="text-lg text-white mb-12 max-w-2xl mx-auto">
-              Faites partie d'une communauté en pleine croissance, prête à vous
-              aider à atteindre vos objectifs financiers. Ensemble, nous pouvons
-              faire évoluer vos compétences et atteindre de nouveaux sommets.
-            </p>
-            <Link
-              to="/inscription"
-              className="bg-primary text-white py-3 px-8 rounded-lg text-lg font-semibold hover:bg-primary-dark"
-            >
-              Inscrivez-vous maintenant
-            </Link>
-          </section>
+        {/* Section: YT */}
+        <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">
+          <iframe
+            src="https://www.youtube.com/embed/Fje4bk6cvfg?si=XSudVYpj4NxsX-Qb"
+            className="w-full  h-[300px] md:h-[400px] border-none flex-1"
+            allowFullScreen
+          ></iframe>
         </div>
+        {/* Section: Call to Action */}
+        <section className="text-center my-20">
+          <h2 className="text-3xl font-semibold text-primary mb-4">
+            Rejoignez-nous dès aujourd'hui !
+          </h2>
+          <p className="text-lg text-white mb-12 max-w-2xl mx-auto">
+            Faites partie d'une communauté en pleine croissance, prête à vous
+            aider à atteindre vos objectifs financiers. Ensemble, nous pouvons
+            faire évoluer vos compétences et atteindre de nouveaux sommets.
+          </p>
+          <Link
+            to="/inscription"
+            className="bg-primary text-white py-3 px-8 rounded-lg text-lg font-semibold hover:bg-primary-dark"
+          >
+            Inscrivez-vous maintenant
+          </Link>
+        </section>
       </div>
-      <Footer />
     </div>
   );
 };
