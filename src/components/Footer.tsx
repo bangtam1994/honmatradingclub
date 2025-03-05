@@ -16,8 +16,7 @@ import {
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="relative text-black bg-white h-[60rem] w-full mt-20">
