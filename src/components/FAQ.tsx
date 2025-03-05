@@ -35,11 +35,11 @@ const FAQPage = ({ data, isHomepage = false }: FAQProps) => {
               value={`item-${index}`}
               className="border-none  overflow-hidden "
             >
-              <AccordionTrigger className="flex items-center justify-between p-5 cursor-pointer bg-primary rounded-xl mb-8  text-white hover:bg-primary-hover hover:no-underline  text-[20px]">
+              <AccordionTrigger className="flex items-center justify-between p-5 cursor-pointer bg-primary rounded-xl mb-4 md:mb-8  text-white hover:bg-primary-hover hover:no-underline  md:text-[20px]">
                 <div>{faq.question} </div>
               </AccordionTrigger>
 
-              <AccordionContent className="p-4 text-gray-200 mb-8 text-[18px] leading-7">
+              <AccordionContent className="py-0 md:py-4 text-gray-300 mb-8  leading-7 md:text-[20px] text-center md:text-left">
                 {faq.response}
               </AccordionContent>
             </AccordionItem>

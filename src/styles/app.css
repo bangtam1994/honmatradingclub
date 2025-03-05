@@ -2,6 +2,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-display: swap;
   background-color: black;
+  color: white;
 }
 
 ::-moz-selection {

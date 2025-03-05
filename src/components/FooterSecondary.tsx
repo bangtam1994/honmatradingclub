@@ -16,20 +16,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function FooterSecondary() {
   return (
-    <div className="relative h-[20rem] w-full mt-20 text-gray-200">
-      <div className="absolute top-[30%] left-1/2 transform -translate-x-1/2 text-center px-6">
+    <div className="w-full py-20 text-gray-200 bg-primary-darkmode">
+      <div className="text-center px-6">
         <hr className="border-black w-9/12 m-auto" />
 
-        <div className="flex justify-evenly items-center text-lg mt-3">
+        <div className="flex justify-evenly items-center text-lg  text-primary">
           <a href={`mailto:${EMAIL}`} className="text-right">
             {EMAIL}
           </a>
         </div>
       </div>
 
-      <footer className="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-center  mt-auto">
+      <footer className="text-center mt-auto">
         <div className="container mx-auto text-sm">
-          <p className="text-sm">
+          <p className="text-sm text-gray-500 my-8">
             © {new Date().getFullYear()} Honma Trading Club. All rights
             reserved.
           </p>
@@ -60,12 +60,12 @@ export default function FooterSecondary() {
             </button>
           </div>
           <div className="mt-6">
-            <a href="/terms-of-service" className="text-sm  hover:text-primary">
+            <a href="/terms-of-service" className="text-sm hover:text-primary">
               Conditions Générales
             </a>
           </div>
           <div className="mt-1">
-            <a href="/privacy-policy" className="text-sm  hover:text-primary">
+            <a href="/privacy-policy" className="text-sm hover:text-primary">
               Politique de confidentialité
             </a>
           </div>

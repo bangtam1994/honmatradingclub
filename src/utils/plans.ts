@@ -42,8 +42,6 @@ export const plans: Plan[] = [
       "Accès aux modules vidéos (tous niveaux)",
       "Accès E-books et supports",
       "Études de cas pratiques sur des trades réussis et ratés",
-      "Checklist quotidienne de prépa trading",
-      "Analyse technique et fondamentale",
     ],
     details: {
       title: "Formation Honma Trading Club",
@@ -107,10 +105,8 @@ export const plans: Plan[] = [
     description: "Rejoins le Club, une communauté de traders aguerris.",
     features: [
       "Accès à la formation HTC (complète)",
-      "Analyse technique et fondamentale",
       "Accès au groupe privé Discord d'apprentissage",
       "Accès à 4 lives exclusif par mois",
-      "Outils exclusifs de backtesting",
       "Checklist quotidienne de prépa trading",
     ],
     details: {
@@ -148,7 +144,7 @@ export const plans: Plan[] = [
       {
         question: "Est-ce que je peux payer par crypto ?",
         response:
-          "Oui, seulement en annuel, envoie moi un message privé sur télégram à https://telegram.me/alxqng je t'expliquerais",
+          "Oui, seulement en annuel, envoie moi un message privé sur télégram à https://telegram.me/alxqng je t'expliquerais les démarches à suivre.",
       },
       {
         question: "Mon paiement ne passe pas, que faire ?",

@@ -17,3 +17,16 @@ The website shows who is Honma founder, what are the different training programs
 ```js
 yarn dev
 ```
+
+### Use local backend with Stripe
+
+Stripe is a payment platform that allows you to accept payments online.
+
+To use the local frontend with your local backend, you need to launch your backend over https.
+
+To do so, you can use ngrok to forward requests to your local server.
+If your backend is running on port 3100, you can run the following command:
+
+```js
+ngrok http 3100
+```

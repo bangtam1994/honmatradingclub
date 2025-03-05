@@ -70,12 +70,19 @@ const PricingPlans: React.FC = () => {
                       ? "bg-primary text-white"
                       : "bg-gray-200 text-black"
                   )}
+                  style={
+                    isClubPrivate
+                      ? {
+                          boxShadow: "inset 0 0 15px rgba(255, 255, 255, 0.9",
+                        }
+                      : {}
+                  }
                 >
                   <CardContent className="flex flex-col justify-between h-full">
                     <div>
                       {/* Plan Name */}
-                      <div className="h-[200px] flex flex-col  justify-between">
-                        <h3 className="mt-2 text-[26px] md:text-3xl font-bold text-center">
+                      <div className="h-[180px] flex flex-col  justify-between">
+                        <h3 className="mt-2 text-[26px] md:text-4xl font-bold text-center">
                           {plan.name}
                         </h3>
 
@@ -86,7 +93,7 @@ const PricingPlans: React.FC = () => {
                         {/* Divider */}
                         <div
                           className={cn(
-                            "w-full border-t ",
+                            "w-full border-t mt-2 ",
                             isClubPrivate ? "border-white" : "border-gray-500"
                           )}
                         ></div>
@@ -112,7 +119,7 @@ const PricingPlans: React.FC = () => {
                       </div>
                     </div>
                     {/* Price */}
-                    <div className="mt-8 md:mt-10">
+                    <div className="mt-8 md:mt-9">
                       {" "}
                       {plan.monthlyPrice > 0 && (
                         <motion.div

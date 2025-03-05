@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function SMCStrategy() {
   return (
-    <div className="relative bg-[#0d1017] text-white py-48">
+    <div className="relative bg-black text-white py-48 ">
       <div
         className="min-h-[30vh] bg-center bg-no-repeat bg-cover relative py-48"
         style={{
@@ -24,7 +24,7 @@ export default function SMCStrategy() {
         className="flex flex-col justify-center items-center bg-black w-[full]"
       >
         <div className="flex flex-col md:flex-row  justify-between items-center w-full px-8 container h gap-10 md:my-48 my-20">
-          <div className="w-full lg:w-1/2 flex flex-col items-center">
+          <div className="w-full lg:w-1/2 flex flex-col items-center pl-10 md:pl-0">
             <div className="relative mb-4 flex justify-center items-center">
               <LazyLoadImage
                 effect="blur"
@@ -53,7 +53,7 @@ export default function SMCStrategy() {
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center ">
             <MotionWrapper>
-              <div className="mb-7 text-center md:text-left  border-l-4 border-primary pl-6">
+              <div className="mb-7 text-center md:text-left  border-l-4 border-primary md:pl-6">
                 <h2 className="text-[30px] md:text-[40px]">
                   Découvre ma stratégie avec le
                 </h2>

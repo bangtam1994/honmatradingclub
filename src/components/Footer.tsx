@@ -27,7 +27,7 @@ export default function Footer() {
         className="w-full h-full object-cover"
       />
 
-      <div className="absolute top-[30%] left-1/2 transform -translate-x-1/2 text-center px-6">
+      <div className="absolute top-[16%] md:top-[30%] left-1/2 transform -translate-x-1/2 text-center px-6">
         <h1 className="text-2xl font-semibold mb-4">
           <Typewriter
             options={{
@@ -39,7 +39,7 @@ export default function Footer() {
             }}
           />
         </h1>
-        <p className="text-lg mb-6 w-[60%] m-auto">
+        <p className="text-lg mb-6 w-[100%] md:w-[60%] m-auto">
           Ma mission est de vous accompagner dans votre évolution à la fois en
           tant que trader expérimenté et armé, mais aussi dans votre mindset et
           approche autour de la liberté financière. Vivez cette aventure avec
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <footer className="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-center  mt-auto">
+      <footer className="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-center  mt-20">
         <div className="container mx-auto text-sm text-black">
           <p className="text-sm text-black">
             © {new Date().getFullYear()} Honma Trading Club. All rights

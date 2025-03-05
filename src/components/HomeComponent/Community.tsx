@@ -9,10 +9,10 @@ export default function Community() {
     <MotionWrapper>
       <div
         id="info-section"
-        className="m-20 text-white  px-6 lg:px-20 md:p-10 mb-"
+        className="my-10 md:my-20 text-white  px-6 lg:px-20 md:p-10 mb-"
       >
         <div className="mx-auto flex flex-col  gap-8  items-center justify-between space-y-8 md:space-y-0 mb-16">
-          <h1 className="text-[20px] md:text-[35px] font-bold mt-2 flex text-center items-end">
+          <h1 className="text-[25px] md:text-[35px] font-bold mt-2 flex text-center items-end">
             Tradez en
             <motion.span className="text-center  font-semibold bg-gradient-to-r from-purple-400 via-indigo-500 to-blue-500 bg-clip-text text-transparent ml-4">
               communauté
@@ -45,13 +45,6 @@ export default function Community() {
 
           {/* YOUTUBe  */}
         </div>
-        {/* <div className="h-[400px] md:w-[700px] sm:w-full m-auto mt-[100px]">
-          <iframe
-            src="https://www.youtube.com/embed/QEIDA02VJkU?si=cRjxCdvdYzgSlmlX"
-            className="w-full  h-[300px] md:h-[400px] border-none flex-1"
-            allowFullScreen
-          ></iframe>
-        </div> */}
       </div>
     </MotionWrapper>
   );

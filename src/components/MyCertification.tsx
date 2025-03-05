@@ -17,7 +17,7 @@ const MyCertification = () => {
             Trader FTMO depuis{" "}
             <span className="text-primary font-bold">2022</span>.
           </h2>
-          <p className="text-gray-400 mt-4 text-xl">
+          <p className="text-gray-400 mt-4 text-lg md:text-xl">
             Après de nombreuses années <b>à perdre de l'argent</b>, j'ai
             découvert une stratégie qui m'a permis de <b>valider </b>l'une de
             mes premières prop firm en <b>2022</b>.
