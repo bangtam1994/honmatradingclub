@@ -16,6 +16,7 @@ import {
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -87,14 +88,17 @@ export default function Footer() {
             </button>
           </div>
           <div className="mt-6">
-            <a href="/terms-of-service" className="text-sm  hover:text-primary">
+            <Link
+              to="/terms-of-service"
+              className="text-sm  hover:text-primary"
+            >
               Conditions Générales
-            </a>
+            </Link>
           </div>
           <div className="mt-1">
-            <a href="/privacy-policy" className="text-sm  hover:text-primary">
+            <Link to="/privacy-policy" className="text-sm  hover:text-primary">
               Politique de confidentialité
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
