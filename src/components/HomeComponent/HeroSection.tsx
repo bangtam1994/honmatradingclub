@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import Header from "../Header";
 import ScrollDownArrow from "../ScrollDownArrow";
 import { Button } from "../ui/button";
-import { useState, useEffect } from "react";
 import PhonePic from "../../assets/phone_hero.svg";
+import { WordRotate } from "../magicui/word-rotate";
 
 const subtitles = [
   "Notre stratégie : Liquidity Concept",
@@ -12,7 +12,7 @@ const subtitles = [
 ];
 
 export default function HeroSection() {
-  const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
+  // const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
   const handleScrollToPricing = () => {
     const pricingSection = document.getElementById("pricing-section");
     if (pricingSection) {
@@ -22,14 +22,14 @@ export default function HeroSection() {
     }
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentSubtitleIndex(
-        (prevIndex) => (prevIndex + 1) % subtitles.length
-      );
-    }, 4000);
-    return () => clearInterval(intervalId);
-  }, []);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentSubtitleIndex(
+  //       (prevIndex) => (prevIndex + 1) % subtitles.length
+  //     );
+  //   }, 4000);
+  //   return () => clearInterval(intervalId);
+  // }, []);
   return (
     <div id="hero">
       <Header />
@@ -44,8 +44,9 @@ export default function HeroSection() {
           <h1 className="text-[40px] md:text-[75px] 3xl:text-[80px]">
             SMART TRADER FAMILY 🍥
           </h1>
+
           <h4 className="mt-6 text-h6 md:text-h4 text-gray-300">
-            <motion.span
+            {/* <motion.span
               key={currentSubtitleIndex}
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -53,7 +54,8 @@ export default function HeroSection() {
               transition={{ duration: 1 }}
             >
               {subtitles[currentSubtitleIndex]}
-            </motion.span>
+            </motion.span> */}
+            <WordRotate className="text-gray-300" words={subtitles} />
           </h4>
         </div>
         <div className="flex items-center justify-center  md:h-full">

@@ -5,7 +5,6 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import MotionWrapper from "../components/MotionWrapper";
 import { ArrowRight, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HeaderSecondary from "@/components/HeaderSecondary";
 type SessionData = {
   status: string;
   session: {
@@ -55,17 +54,16 @@ const StripeStatusPage: React.FC = () => {
 
   return (
     <>
-      <HeaderSecondary />
-      <div className="w-full py-6">
+      <div className="w-full py-6 min-h-[50vh]">
         <MotionWrapper>
           {loading ? (
             <div className="flex justify-center">
               <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
             </div>
           ) : (
-            <div className="w-full py-6 flex flex-col gap-12 items-center text-center">
-              <h1 className="text-4xl font-bold mb-4">
-                Paiement{" "}
+            <div className="w-full py-36 px-6   flex flex-col gap-12 items-center text-center">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4 flex items-center gap-2">
+                Paiement
                 {statusPage === "success" ? (
                   <span className="flex items-center">
                     effectué
@@ -74,12 +72,12 @@ const StripeStatusPage: React.FC = () => {
                 ) : (
                   <span className="flex items-center">
                     annulé
-                    <XCircle className="ml-2 text-red-500" />
+                    <XCircle className="ml-4 text-red-500 " />
                   </span>
                 )}
               </h1>
               {statusPage !== "success" ? (
-                <div className="text-2xl">
+                <div className="text-xl md:text-2xl">
                   Ton paiement a été annulé. Tu ne seras pas débité.
                 </div>
               ) : (
@@ -97,7 +95,7 @@ const StripeStatusPage: React.FC = () => {
               )}
               <Button
                 variant="reserve"
-                className="mt-12 p-8 text-xl bg-primary text-white"
+                className="mt-12 p-8 text-sm md:text-xl bg-primary text-white"
                 onClick={() => navigate(`/${productPage ?? ""}`)}
               >
                 Retour à la page de l'offre

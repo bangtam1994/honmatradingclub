@@ -22,8 +22,8 @@ export interface Plan {
 }
 
 export enum PlanType {
-  FORMATION_HTC = "FORMATION_HTC",
-  LE_CLUB_PRIVE = "private_club",
+  FORMATION_HTC = "formation_htc",
+  LE_CLUB_PRIVE = "le_club_prive",
   MENTORAT = "mentorship",
 }
 
@@ -32,7 +32,7 @@ export const plans: Plan[] = [
     type: PlanType.FORMATION_HTC,
     name: "Formation HTC ™",
     active: true,
-    priceId: import.meta.env.VITE_STRIPE_PRICE_SMART_SIGNALS,
+    priceId: import.meta.env.VITE_STRIPE_PRICE_FORMATION_HTC,
     monthlyPrice: 49.9,
     annualPrice: 0,
     baseAnnualPrice: 0,

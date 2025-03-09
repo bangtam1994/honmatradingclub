@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, useStripe } from "@stripe/react-stripe-js";
 import { toast } from "sonner";
 import axios from "axios";
+import { BorderBeam } from "./magicui/border-beam";
+import { Input } from "./ui/input";
+import { ShimmerButton } from "./magicui/shimmer-button";
+import { cn } from "@/lib/utils";
 
 interface StripeCheckoutProps {
   price: number;
@@ -80,47 +89,77 @@ const CheckoutForm = ({ price, priceId, product }: StripeCheckoutProps) => {
   };
 
   return (
-    <Card className="p-8 md:p-10 w-full max-w-screen-md mx-auto mt-10 ">
-      <h2 className="text-2xl font-semibold mb-4 text-center text-black">
-        Informations personnelles
-      </h2>
-      <form className="flex flex-col">
-        <input
-          type="text"
-          placeholder="Nom"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className="mb-4 p-3 border border-gray-300 rounded"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Prénom"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className="mb-4 p-3 border border-gray-300 rounded"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="mb-4 p-3 border border-gray-300 rounded"
-          required
-        />
-        <Button
-          onClick={handleCheckout}
-          disabled={loading}
-          variant={"reserve"}
-          className={`w-full md:w-fit h-fit px-4 py-4 md:px-6 md:py-4 bg-primary text-wrap text-white md:text-lg font-semibold shadow-lg hover:bg-primary-dark transition-all m-auto  ${
-            loading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          style={{ marginTop: "20px" }}
-        >
-          {loading ? "Chargement..." : "Accéder à la page de paiement"}
-        </Button>
-      </form>
+    <Card className="md:p-8 w-full max-w-screen-md mx-auto mt-10 relative overflow-hidden bg-transparent">
+      <CardHeader>
+        <CardTitle className="text-center text-xl md:text-2xl font-semibold mb-2">
+          Informations personnelles
+        </CardTitle>
+        <CardDescription className="text-center text-gray-400 text-md md:text-xl">
+          Entrez vos informations personnelles pour accéder à la page de
+          paiement.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form>
+          <div className="grid w-full items-center gap-4 ">
+            <div className="flex flex-col space-y-1.5">
+              <Input
+                id="email"
+                type="email"
+                placeholder="email@example.com"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Input
+                id="nom"
+                type="text"
+                placeholder="Prénom"
+                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+                required
+              />
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Input
+                id="prenom"
+                type="text"
+                placeholder="Nom"
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
+                required
+              />
+            </div>
+          </div>
+
+          <ShimmerButton
+            className={cn(
+              "w-full md:w-fit h-fit font-bold bg-primary text-wrap text-white text-sm md:text-lg  shadow-lg hover:bg-primary-dark transition-all m-auto mt-10",
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            )}
+            shimmerColor={"white"}
+            background={"#7c3aed"}
+            shimmerSize={"0.1em"}
+            onClick={handleCheckout}
+            disabled={loading}
+          >
+            {loading ? "Chargement..." : "Accéder à la page de paiement"}
+          </ShimmerButton>
+        </form>
+      </CardContent>
+      <BorderBeam
+        duration={6}
+        size={400}
+        className="from-transparent via-red-500 to-transparent"
+      />
+      <BorderBeam
+        duration={6}
+        delay={3}
+        size={400}
+        className="from-transparent via-blue-500 to-transparent"
+      />
     </Card>
   );
 };

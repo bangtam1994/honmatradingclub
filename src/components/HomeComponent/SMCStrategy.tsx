@@ -1,7 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import candleImage from "../../assets/candle.png";
 import { Button } from "../ui/button";
-import phoneBackground from "../../assets/hero_section_background.jpeg";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MotionWrapper from "@/components/MotionWrapper";
 import { motion } from "framer-motion";
@@ -9,7 +8,7 @@ import { motion } from "framer-motion";
 export default function SMCStrategy() {
   return (
     <div className="relative bg-black text-white py-48 ">
-      <div
+      {/* <div
         className="min-h-[30vh] bg-center bg-no-repeat bg-cover relative py-48"
         style={{
           backgroundImage: `url(${phoneBackground})`,
@@ -18,7 +17,7 @@ export default function SMCStrategy() {
         <div className="absolute top-0 left-0 w-full h-1/5 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
 
         <div className="absolute bottom-0 left-0 w-full h-1/6 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
-      </div>
+      </div> */}
       <div
         id="content"
         className="flex flex-col justify-center items-center bg-black w-[full]"

@@ -10,6 +10,8 @@ import FAQPage from "@/components/FAQ";
 import { useState, useEffect } from "react";
 import TestimonialsBanner from "@/components/Testimonials";
 import StripeCheckout from "@/components/StripeCheckout";
+
+import { BlurFade } from "@/components/magicui/blur-fade";
 interface PagePageInterface {
   plan: PlanType;
 }
@@ -61,16 +63,18 @@ const PlanPage = ({ plan }: PagePageInterface) => {
               <div className="md:w-1/2  text-left">
                 {/* Liste des points */}
                 {data.features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center  gap-3  text-gray-200 leading-10 text-[14px] md:text-[22px] md:mb-4`}
-                  >
-                    <FontAwesomeIcon
-                      icon={faCheckCircle}
-                      className={`w-[20px] h-[20px] mr-2  text-primary `}
-                    />
-                    {feature}
-                  </div>
+                  <BlurFade delay={0.3 + index * 0.5} inView>
+                    <div
+                      key={index}
+                      className={`flex items-center  gap-3  text-gray-200 leading-10 text-[14px] md:text-[22px] md:mb-4`}
+                    >
+                      <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        className={`w-[20px] h-[20px] mr-2  text-primary `}
+                      />
+                      {feature}
+                    </div>
+                  </BlurFade>
                 ))}
               </div>
             </div>
@@ -107,7 +111,7 @@ const PlanPage = ({ plan }: PagePageInterface) => {
         </MotionWrapper>
       </div>
 
-      <div className="w-full bg-gray-700 bg-opacity-10 p-8 my-10">
+      <div className="w-full bg-gray-700 bg-opacity-10 p-8 my-20">
         <MotionWrapper className="text-center text-gray-200 text-2xl md:text-3xl italic my-10">
           "Il n'y a pas de vent favorable à celui qui ne sait pas où il va."
           <br />

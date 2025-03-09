@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-// import theme from "../../theme/theme";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,9 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { plans, PlanType } from "@/utils/plans";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import MotionWrapper from "@/components/MotionWrapper";
+
+import { FlipText } from "../magicui/flip-text";
+import { TextAnimate } from "../magicui/text-animate";
+import { ShimmerButton } from "../magicui/shimmer-button";
 
 const PricingPlans: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +34,7 @@ const PricingPlans: React.FC = () => {
           loop
           muted
           playsInline
-          className="absolute top-[12%] md:top-[15%] left-0 w-full  h-[40%] md:h-[90%] object-cover z-[-1]"
+          className="absolute top-[12%] md:top-[20%] left-0 w-full  h-[40%] md:h-[90%] object-cover z-[-1]"
         />
 
         {/* Section Title */}
@@ -42,11 +44,27 @@ const PricingPlans: React.FC = () => {
           </div>
         </div>
         <div className="text-center text-white">
-          <h2 className="text-h2 font-bold">Les offres Honma</h2>
-          <p className="mt-10 w-[70%] m-auto  text-[20px] md:text-[30px]  text-primary-light uppercase ">
-            Combien vas-tu investir dans ton succès en tant que trader
-            aujourd'hui ?
-          </p>
+          {/* <h2 className="text-h2 font-bold">Les offres Honma</h2> */}
+          <FlipText className="text-2xl md:text-h2 font-bold mb-10" as="h2">
+            Les offres Honma
+          </FlipText>
+
+          <TextAnimate
+            animation="blurInUp"
+            by="character"
+            delay={2}
+            className="w-[90%] m-auto text-[18px] md:text-[30px]  text-primary-light "
+          >
+            Combien vas-tu investir dans ton succès
+          </TextAnimate>
+          <TextAnimate
+            animation="blurInUp"
+            by="character"
+            delay={2}
+            className="w-[90%] m-auto text-[18px] md:text-[30px]  text-primary-light "
+          >
+            en tant que trader aujourd'hui ?
+          </TextAnimate>
         </div>
         <div className="flex justify-center p-6 ">
           {/* Pricing Cards */}
@@ -140,21 +158,21 @@ const PricingPlans: React.FC = () => {
                         </motion.div>
                       )}
                       {/* CTA Button */}
-                      <Button
+                      <ShimmerButton
                         className={cn(
-                          "w-full mt-10 font-bold h-12",
-                          isClubPrivate
-                            ? "bg-white text-black"
-                            : "bg-primary text-white"
+                          "w-full mt-10 font-bold h-14 shadow-2xl hover:scale-105 transition-transform duration-300 ease-out",
+                          isClubPrivate ? " text-black" : " text-white"
                         )}
-                        variant={"reserve"}
                         disabled={!plan.active}
                         onClick={handleClick}
+                        background={isClubPrivate ? "white" : "#7c3aed"}
+                        shimmerColor={isClubPrivate ? "#7c3aed" : "white"}
+                        shimmerSize={"0.1em"}
                       >
                         {plan.type === PlanType.MENTORAT
                           ? "ME CONTACTER"
                           : "REJOINDRE"}
-                      </Button>
+                      </ShimmerButton>
                     </div>
                   </CardContent>
                 </Card>
